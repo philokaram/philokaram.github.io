@@ -1,141 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Philopateer Karam | Junior HPC System Administrator</title>
-  <meta name="description" content="Junior HPC system administrator from Cairo. Linux, SLURM, xCAT, MPI and OpenMP.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Philopateer Karam | Home</title>
+<meta name="description" content="Junior HPC system administrator from Cairo. Linux, SLURM, xCAT, MPI and OpenMP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="progress"></div>
+
 <nav>
   <div class="wrap">
     <span class="brand">philo@hipercluster</span>
-    <a href="#about">about</a>
-    <a href="#experience">experience</a>
-    <a href="#skills">skills</a>
-    <a href="#projects">projects</a>
-    <a href="#certs">certs</a>
-    <a href="#contact">contact</a>
+    <a href="index.html">home</a>
+    <a href="experience.html">experience</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="certs.html">certs</a>
+    <a href="contact.html">contact</a>
+    <button class="nav-btn" id="themeToggle" title="Toggle theme">☾</button>
     <a class="cv" href="Philopateer-Karam-CV.pdf" download>cv.pdf</a>
   </div>
 </nav>
 
 <main class="wrap">
-  <div class="term" id="about">
+  <!-- Interactive terminal -->
+  <div class="term reveal" id="term">
     <div class="bar">
       <i style="background:var(--red)"></i>
       <i style="background:var(--amber)"></i>
       <i style="background:var(--green)"></i>
       <span>philo@hipercluster: ~</span>
+      <span class="clock"></span>
     </div>
     <div class="body">
-      <div class="ps">philo@hipercluster<b>:~$</b> <span id="typed">whoami</span><span class="cursor" id="cur"></span></div>
-      <div class="out on" id="o1">
-        <div class="name">Philopateer Karam</div>
-        <div>Junior HPC system administrator, Cairo, Egypt.</div>
-      </div>
-      <div class="out on" id="o2">
-        <div class="ps">philo@hipercluster<b>:~$</b> cat about.md</div>
-        <div>Computer Science graduate from Cairo University (2022 to 2026, GPA 3.91). I build and run Linux clusters: provisioning with xCAT, accounts with FreeIPA, scheduling with SLURM, and parallel code in MPI and OpenMP. Now learning Ansible and Kubernetes.</div>
+      <div class="ps">philo@hipercluster<b>:~$</b> whoami</div>
+      <div class="name">Philopateer Karam <span class="role"></span></div>
+      <div style="margin-bottom:16px">Junior HPC System Administrator — Cairo, Egypt.</div>
+
+      <div id="termLog"></div>
+      <div class="cmd-line ps">
+        <span>philo@hipercluster<b>:~$</b></span>
+        <input id="termInput" class="cmd-input" autocomplete="off" spellcheck="false" aria-label="Terminal input">
       </div>
     </div>
   </div>
 
-  <section aria-label="Summary">
+  <!-- Animated stats -->
+  <section aria-label="Summary" class="reveal">
     <div class="grid tiles">
-      <div class="panel tile"><div class="k">gpa</div><div class="v">3.91</div></div>
-      <div class="panel tile"><div class="k">internships</div><div class="v">2</div></div>
-      <div class="panel tile"><div class="k">certificates</div><div class="v">5</div></div>
-      <div class="panel tile"><div class="k">active jobs</div><div class="v" style="color:var(--green)">1</div></div>
+      <div class="panel tile interactive"><div class="k">gpa</div><div class="v" data-count="3.91" data-decimals="2">0</div></div>
+      <div class="panel tile interactive"><div class="k">internships</div><div class="v" data-count="2">0</div></div>
+      <div class="panel tile interactive"><div class="k">certificates</div><div class="v" data-count="5">0</div></div>
+      <div class="panel tile interactive"><div class="k">active jobs</div><div class="v" data-count="1" style="color:var(--green)">0</div></div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2><span class="ps">$</span>squeue --user=philo</h2>
-    <div class="panel scroll">
-      <table>
-        <tr><th>jobid</th><th>name</th><th>where</th><th>when</th><th>state</th></tr>
-        <tr><td>1003</td><td>HPC research group member<small>Cluster administration, performance optimization, parallel computing.</small></td><td>Cairo University</td><td>Mar 2025 to now</td><td class="run">RUNNING</td></tr>
-        <tr><td>1002</td><td>HPC intern, system support<small>Installed HPC software, supported cluster management, scheduled jobs with SLURM.</small></td><td>AIC, MCIT</td><td>Jul to Sep 2025</td><td class="done">COMPLETED</td></tr>
-        <tr><td>1001</td><td>HPC intern, cluster deployment<small>Helped rebuild the HiPer-FC cluster and set up a secure lab.</small></td><td>HPC R&amp;D Lab, FCAI-CU</td><td>Jul to Sep 2025</td><td class="done">COMPLETED</td></tr>
-      </table>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2><span class="ps">$</span>sinfo --skills</h2>
+  <!-- Quick links -->
+  <section class="reveal">
+    <h2><span class="ps">$</span>ls -l /pages</h2>
     <div class="grid two">
-      <div class="panel" id="sk1">
-        <div class="skill"><span>Linux and Unix</span><span>90%</span></div><div class="track"><div style="width:90%"></div></div>
-        <div class="skill"><span>Bash scripting</span><span>85%</span></div><div class="track"><div style="width:85%"></div></div>
-        <div class="skill"><span>SLURM</span><span>80%</span></div><div class="track"><div style="width:80%"></div></div>
-        <div class="skill"><span>MPI and OpenMP</span><span>75%</span></div><div class="track"><div style="width:75%"></div></div>
-        <div class="skill"><span>xCAT and FreeIPA</span><span>70%</span></div><div class="track" style="margin-bottom:0"><div style="width:70%"></div></div>
-      </div>
-      <div class="panel" id="sk2">
-        <div class="skill"><span>C and C++</span><span>85%</span></div><div class="track"><div style="width:85%"></div></div>
-        <div class="skill"><span>Python</span><span>75%</span></div><div class="track"><div style="width:75%"></div></div>
-        <div class="skill"><span>Java</span><span>70%</span></div><div class="track"><div style="width:70%"></div></div>
-        <div class="skill"><span>Ansible (learning)</span><span>35%</span></div><div class="track learn"><div style="width:35%"></div></div>
-        <div class="skill"><span>Kubernetes (learning)</span><span>20%</span></div><div class="track learn" style="margin-bottom:0"><div style="width:20%"></div></div>
-      </div>
+      <a class="panel interactive" href="experience.html" style="text-decoration:none">
+        <div style="color:var(--green);font-weight:600">experience →</div>
+        <div class="dim" style="font-size:12px">squeue --user=philo</div>
+      </a>
+      <a class="panel interactive" href="skills.html" style="text-decoration:none">
+        <div style="color:var(--green);font-weight:600">skills →</div>
+        <div class="dim" style="font-size:12px">sinfo --skills</div>
+      </a>
+      <a class="panel interactive" href="projects.html" style="text-decoration:none">
+        <div style="color:var(--green);font-weight:600">projects →</div>
+        <div class="dim" style="font-size:12px">ls -l projects/</div>
+      </a>
+      <a class="panel interactive" href="certs.html" style="text-decoration:none">
+        <div style="color:var(--green);font-weight:600">certificates →</div>
+        <div class="dim" style="font-size:12px">cat certs.txt</div>
+      </a>
+      <a class="panel interactive" href="contact.html" style="text-decoration:none">
+        <div style="color:var(--green);font-weight:600">contact →</div>
+        <div class="dim" style="font-size:12px">whois philo</div>
+      </a>
     </div>
   </section>
 
-  <section id="projects">
-    <h2><span class="ps">$</span>ls -l projects/</h2>
-    <div class="panel">
-      <ul class="ls">
-        <li><span class="lang">docs</span><span><a href="https://github.com/philokaram/rhel-linux-administration-portfolio">rhel-linux-administration-portfolio</a><small>Red Hat system administration labs and notes.</small></span></li>
-        <li><span class="lang">Java</span><span><a href="https://github.com/philokaram/jenkins-calculator-demo">jenkins-calculator-demo</a><small>A small Java app built and tested by a Jenkins pipeline.</small></span></li>
-        <li><span class="lang">Java</span><span><a href="https://github.com/philokaram/Java_GA_Library">Java_GA_Library</a><small>A genetic algorithms library.</small></span></li>
-        <li><span class="lang">Python</span><span><a href="https://github.com/philokaram/Gomogu_Game_With_AI">Gomogu_Game_With_AI</a><small>Gomoku with an AI opponent.</small></span></li>
-        <li><span class="lang">PHP</span><span><a href="https://github.com/philokaram/matchmind-laravel">matchmind-laravel</a><small>A web app built with Laravel.</small></span></li>
-        <li><span class="lang">C++</span><span><a href="https://github.com/philokaram/Simple_Paint_App">Simple_Paint_App</a><small>A paint application.</small></span></li>
-      </ul>
-    </div>
-    <p class="dim">More on <a href="https://github.com/philokaram">github.com/philokaram</a>.</p>
-  </section>
-
-  <section id="certs">
-    <h2><span class="ps">$</span>cat certs.txt</h2>
-    <div class="grid two">
-      <div class="panel">
-        <ul class="plain">
-          <li>Red Hat System Administration I (RH124), Jun 2026</li>
-          <li>Red Hat System Administration II (RH134), Jun 2026</li>
-          <li>High-Performance and Parallel Computing Specialization, University of Colorado Boulder, Mar 2026</li>
-          <li>Ubuntu Linux Essentials, MaharaTech, Feb 2026</li>
-          <li>Introduction to HPC, MaharaTech, Jun 2025</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <div class="dim" style="margin-bottom:6px">in progress</div>
-        <ul class="plain">
-          <li class="run" style="color:var(--amber)">RHEL Automation with Ansible, Red Hat Academy</li>
-          <li style="color:var(--amber)">Introduction to Kubernetes, The Linux Foundation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2><span class="ps">$</span>whois philo</h2>
-    <div class="panel">
-      <div>email&nbsp;&nbsp;&nbsp;<a href="mailto:philokrm@gmail.com">philokrm@gmail.com</a></div>
-      <div>github&nbsp;&nbsp;<a href="https://github.com/philokaram">github.com/philokaram</a></div>
-      <div>based&nbsp;&nbsp;&nbsp;Cairo, Egypt</div>
-    </div>
-  </section>
+  <p class="dim" style="margin-top:24px">
+    Tip: press <kbd>⌘</kbd><kbd>K</kbd> (or <kbd>Ctrl</kbd><kbd>K</kbd>) for the command palette, or type <kbd>g</kbd> then <kbd>p</kbd> to jump to projects.
+  </p>
 </main>
 
-<footer>
-  <div class="wrap">philo@hipercluster:~$ exit 0</div>
-</footer>
+<footer><div class="wrap">philo@hipercluster:~$ exit 0 <span class="heart">♥</span></div></footer>
+
+<!-- Command palette -->
+<div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="box">
+    <input type="text" placeholder="Type a page, action, or link..." aria-label="Search">
+    <ul></ul>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
