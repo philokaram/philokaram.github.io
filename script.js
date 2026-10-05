@@ -56,7 +56,6 @@
       }
     });
   }, { threshold: 0.12 });
-
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
   /* ---------- ANIMATED COUNTERS ---------- */
@@ -96,7 +95,7 @@
     io3.observe(el);
   });
 
-  /* ---------- ROLE TYPING (home) ---------- */
+  /* ---------- ROLE TYPING ---------- */
   const roleEl = document.querySelector(".name .role");
   if (roleEl && !reduce) {
     const roles = [
@@ -147,7 +146,7 @@
         `  theme           toggle dark/light\n` +
         `  goto <page>     open a page (home, experience, skills, projects, certs, contact)\n` +
         `  clear           clear the terminal\n` +
-        `  sudo <x>        nice try 😏`,
+        `  sudo <x>        nice try`,
       whoami: () => "Philopateer Karam — Junior HPC System Administrator, Cairo, Egypt.",
       ls: () => "index.html  experience.html  skills.html  projects.html  certs.html  contact.html",
       "cat about.md": () =>
@@ -191,12 +190,10 @@
         }
         return;
       }
-
       if (cmd.startsWith("sudo")) {
-        write("Nice try. This incident will be reported. 🚨", "err");
+        write("Nice try. This incident will be reported.", "err");
         return;
       }
-
       const fn = COMMANDS[cmd];
       if (fn) {
         const out = fn();
@@ -297,19 +294,14 @@
     });
     palette.addEventListener("click", (e) => { if (e.target === palette) closePalette(); });
 
-    /* ---------- KEYBOARD SHORTCUTS ---------- */
     let gPressed = false;
     document.addEventListener("keydown", (e) => {
       const typing = /input|textarea/i.test((document.activeElement || {}).tagName);
-
-      // Cmd/Ctrl + K → palette
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault(); openPalette(); return;
       }
       if (typing) return;
-
       if (e.key === "?") { e.preventDefault(); openPalette(); return; }
-
       if (e.key === "g") { gPressed = true; setTimeout(() => gPressed = false, 800); return; }
       if (gPressed) {
         const map = { h: "index.html", e: "experience.html", s: "skills.html", p: "projects.html", c: "certs.html", t: "contact.html" };
@@ -341,7 +333,7 @@
     });
   });
 
-  /* ---------- EXPOSE THEME TOGGLE ---------- */
+  /* ---------- THEME BUTTON ---------- */
   const tt = document.getElementById("themeToggle");
   if (tt) {
     tt.textContent = savedTheme === "dark" ? "☾" : "☀";
