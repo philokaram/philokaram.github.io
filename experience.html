@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience | Philopateer Karam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">philo@hipercluster</span>
+    <a href="index.html">home</a>
+    <a href="experience.html">experience</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="certs.html">certs</a>
+    <a href="contact.html">contact</a>
+    <button class="nav-btn" id="themeToggle" title="Toggle theme">☾</button>
+    <a class="cv" href="Philopateer-Karam-CV.pdf" download>cv.pdf</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="page-head reveal">
+    <div class="ps">philo@hipercluster:~$ squeue --user=philo</div>
+    <h1>Experience</h1>
+  </div>
+
+  <div class="panel scroll reveal">
+    <table>
+      <tr><th>jobid</th><th>name</th><th>where</th><th>when</th><th>state</th></tr>
+      <tr><td>1003</td><td>HPC research group member<small>Cluster administration, performance optimization, parallel computing.</small></td><td>Cairo University</td><td>Mar 2025 to now</td><td class="run">RUNNING</td></tr>
+      <tr><td>1002</td><td>HPC intern, system support<small>Installed HPC software, supported cluster management, scheduled jobs with SLURM.</small></td><td>AIC, MCIT</td><td>Jul to Sep 2025</td><td class="done">COMPLETED</td></tr>
+      <tr><td>1001</td><td>HPC intern, cluster deployment<small>Helped rebuild the HiPer-FC cluster and set up a secure lab.</small></td><td>HPC R&amp;D Lab, FCAI-CU</td><td>Jul to Sep 2025</td><td class="done">COMPLETED</td></tr>
+    </table>
+  </div>
+</main>
+
+<footer><div class="wrap">philo@hipercluster:~$ exit 0 <span class="heart">♥</span></div></footer>
+
+<div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="box"><input type="text" placeholder="Type a page, action, or link..."><ul></ul></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills | Philopateer Karam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">philo@hipercluster</span>
+    <a href="index.html">home</a>
+    <a href="experience.html">experience</a>
+    <a href="skills.html">skills</a>
+    <a href="projects.html">projects</a>
+    <a href="certs.html">certs</a>
+    <a href="contact.html">contact</a>
+    <button class="nav-btn" id="themeToggle" title="Toggle theme">☾</button>
+    <a class="cv" href="Philopateer-Karam-CV.pdf" download>cv.pdf</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="page-head reveal">
+    <div class="ps">philo@hipercluster:~$ sinfo --skills</div>
+    <h1>Skills</h1>
+  </div>
+
+  <div class="grid two">
+    <div class="panel reveal">
+      <div class="skill"><span>Linux and Unix</span><span>90%</span></div><div class="track"><div data-w="90"></div></div>
+      <div class="skill"><span>Bash scripting</span><span>85%</span></div><div class="track"><div data-w="85"></div></div>
+      <div class="skill"><span>SLURM</span><span>80%</span></div><div class="track"><div data-w="80"></div></div>
+      <div class="skill"><span>MPI and OpenMP</span><span>75%</span></div><div class="track"><div data-w="75"></div></div>
+      <div class="skill"><span>xCAT and FreeIPA</span><span>70%</span></div><div class="track" style="margin-bottom:0"><div data-w="70"></div></div>
+    </div>
+    <div class="panel reveal">
+      <div class="skill"><span>C and C++</span><span>85%</span></div><div class="track"><div data-w="85"></div></div>
+      <div class="skill"><span>Python</span><span>75%</span></div><div class="track"><div data-w="75"></div></div>
+      <div class="skill"><span>Java</span><span>70%</span></div><div class="track"><div data-w="70"></div></div>
+      <div class="skill"><span>Ansible (learning)</span><span>35%</span></div><div class="track learn"><div data-w="35"></div></div>
+      <div class="skill"><span>Kubernetes (learning)</span><span>20%</span></div><div class="track learn" style="margin-bottom:0"><div data-w="20"></div></div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap">philo@hipercluster:~$ exit 0 <span class="heart">♥</span></div></footer>
+
+<div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="box"><input type="text" placeholder="Type a page, action, or link..."><ul></ul></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
